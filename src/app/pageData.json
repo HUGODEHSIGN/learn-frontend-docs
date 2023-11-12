@@ -1,0 +1,48 @@
+{
+  "categories": [
+    {
+      "category": "Layout",
+      "description": "Make content more digestible, nicer to look at, and reserve space on multiple screen sizes",
+      "pages": [
+        {
+          "page": "Auto Layout Components",
+          "description": "Components that reformat layout based on width"
+        }
+      ]
+    },
+    {
+      "category": "Animation",
+      "description": "Retain user's focus on the website using motion and animation",
+      "pages": [
+        {
+          "page": "Lottie Files",
+          "description": "Implement lottie files into projects for faster load times"
+        },
+        {
+          "page": "Scroll Animations",
+          "description": "Make things move when the user is scrolling through the website"
+        }
+      ]
+    },
+    {
+      "category": "Styling",
+      "description": "Niche style guides for special use cases",
+      "pages": [
+        {
+          "page": "Glass Effect",
+          "description": "CSS transparency and frosted glass effects"
+        }
+      ]
+    },
+    {
+      "category": "More",
+      "description": "",
+      "pages": [
+        {
+          "page": "About Me",
+          "description": "My background and interests"
+        }
+      ]
+    }
+  ]
+}
