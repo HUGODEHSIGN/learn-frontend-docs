@@ -1,43 +1,46 @@
-'use client'
+"use client";
 
-import React from 'react'
+import React from "react";
 
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
-  
-import { Button } from '../ui/button'
-import Link from 'next/link'
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
-  interface Props {
-    children: any,
-    title: string,
-    description: string,
-    link: string
-  }
+import { Button } from "../ui/button";
+import Link from "next/link";
 
-export default function CategoryCard({ children, title, description, link }: Props) {
+interface Props {
+  children: any;
+  title: string;
+  description: string;
+  link: string;
+}
+
+export default function CategoryCard({
+  children,
+  title,
+  description,
+  link,
+}: Props) {
   return (
     <Card>
-    <CardHeader>
-      <CardTitle>{ title }</CardTitle>
-      <CardDescription>{ description }</CardDescription>
-    </CardHeader>
-    <CardContent>
-      <div className='flex flex-wrap gap-2 items-start'>{ children }</div>
-    </CardContent>
-    <CardFooter>
-      <Button asChild>
-        <Link href={ link }>
-        View Category
-        </Link>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="flex flex-wrap gap-2 items-start">{children}</div>
+      </CardContent>
+      <CardFooter>
+        <Button asChild>
+          <Link href={link}>View All</Link>
         </Button>
-    </CardFooter>
-  </Card>
-  )
+      </CardFooter>
+    </Card>
+  );
 }
