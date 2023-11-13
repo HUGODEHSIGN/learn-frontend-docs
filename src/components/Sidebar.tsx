@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import pageData from "../app/pageData.json" assert { type: 'json'};
 
@@ -25,19 +25,24 @@ import { Button } from './ui/button';
 export default function Sidebar() {
   const categories = pageData.categories;
 
+  const [open, setOpen] = useState(false);
+
   const renderSheetNav: () => any = () => {
-    return categories.map(({ category, pages }) => (
+    return categories.map(({ category, pages, link }) => (
 
 <AccordionItem key={ category } value={ category }>
     <AccordionTrigger>{ category }</AccordionTrigger>
     <AccordionContent className='text-left'>
       <div className="flex flex-col items-start">
       {pages.map(({ page, link }) => (
-        <Button key={ page } variant="link" asChild>
+        <Button key={ page } variant="link" onClick={() => setOpen(false)} asChild>
  <Link href={ link }>{ page }</Link>
         </Button>
            
       ))}
+      <Button variant='link' onClick={() => setOpen(false)} asChild>
+        <Link href={ link }>View All</Link>
+      </Button>
       </div>
       
   
@@ -49,7 +54,7 @@ export default function Sidebar() {
   }
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
   <SheetTrigger className='px-2 sm:hidden' asChild>
       <Button variant='ghost' size='icon'>
     <Menu/>

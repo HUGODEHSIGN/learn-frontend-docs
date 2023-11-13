@@ -19,35 +19,40 @@ import {
 
 import Sidebar from "./Sidebar";
 
-import pageData from "../app/pageData.json" assert { type: 'json'};
+import pageData from "../app/pageData.json" assert { type: "json" };
+import { Button } from "./ui/button";
 
 export default function Navbar() {
-    const categories = pageData.categories;
+  const categories = pageData.categories;
 
-    const renderMenu: () => any = () => {
-        return categories.map(({ category, pages }) => (
-            <NavigationMenuItem key={ category }>
-                <NavigationMenuTrigger>{ category }</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                    <ul className="grid gap-3 p-6 w-[487px]">
-                        { pages.map(({ page, description, link }) => (
-                            <ListItem href={ link } key={ page } title={ page }>{ description }</ListItem>
-                        ))}
-                    </ul>
-                </NavigationMenuContent>
-            </NavigationMenuItem>
-        ))
-    }
+  const renderMenu: () => any = () => {
+    return categories.map(({ category, pages, link }) => (
+      <NavigationMenuItem key={category}>
+        <NavigationMenuTrigger className="bg-transparent">
+          <Link href={link}>{category}</Link>
+        </NavigationMenuTrigger>
+
+        <NavigationMenuContent>
+          <ul className="grid gap-3 p-6 w-[487px]">
+            {pages.map(({ page, description, link }) => (
+              <ListItem href={link} key={page} title={page}>
+                {description}
+              </ListItem>
+            ))}
+          </ul>
+        </NavigationMenuContent>
+      </NavigationMenuItem>
+    ));
+  };
 
   return (
-    <nav className="p-2 flex flex-row">
-        <Sidebar/>
-        <h1 className='py-2 px-3 font-bold'><Link href='/'>HUGO DEHSIGN</Link></h1>
-      <NavigationMenu className='hidden sm:block'>
-        <NavigationMenuList>
-            {renderMenu()}
-          
-        </NavigationMenuList>
+    <nav className="fixed p-2 flex flex-row bg-white/70 backdrop-blur-2xl w-full">
+      <Sidebar />
+      <Link href="/" className="py-2 px-3 font-bold">
+        HUGO DEHSIGN
+      </Link>
+      <NavigationMenu className="hidden sm:block">
+        <NavigationMenuList>{renderMenu()}</NavigationMenuList>
       </NavigationMenu>
     </nav>
   );
