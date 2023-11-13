@@ -27,9 +27,9 @@ export default function Categories() {
             link={link}
           >
             {pages.map(({ page, description, link }) => (
-              <HoverCard>
-                <HoverCardTrigger>
-                  <Button key={page} variant="secondary" asChild>
+              <HoverCard key={page}>
+                <HoverCardTrigger asChild>
+                  <Button variant="secondary" asChild>
                     <Link href={link}>{page}</Link>
                   </Button>
                 </HoverCardTrigger>
