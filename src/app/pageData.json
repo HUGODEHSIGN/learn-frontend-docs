@@ -3,44 +3,66 @@
     {
       "category": "Layout",
       "description": "Make content more digestible, nicer to look at, and reserve space on multiple screen sizes",
+      "link": "/layout",
       "pages": [
         {
           "page": "Auto Layout Components",
-          "description": "Components that reformat layout based on width"
+          "description": "Components that reformat layout based on width",
+          "link": "/layout/auto_layout_components"
         }
       ]
     },
     {
       "category": "Animation",
       "description": "Retain user's focus on the website using motion and animation",
+      "link": "/animation",
       "pages": [
         {
           "page": "Lottie Files",
-          "description": "Implement lottie files into projects for faster load times"
+          "description": "Implement lottie files into projects for faster load times",
+          "link": "/animation/lottie_files"
+          
         },
         {
-          "page": "Scroll Animations",
-          "description": "Make things move when the user is scrolling through the website"
+          "page": "Simple Scroll Animations",
+          "description": "Make things move when the user is scrolling through the website",
+          "link": "/animation/simple_scroll_animations"
         }
       ]
     },
     {
-      "category": "Styling",
+      "category": "Styles",
       "description": "Niche style guides for special use cases",
+      "link": "/styles",
       "pages": [
         {
           "page": "Glass Effect",
-          "description": "CSS transparency and frosted glass effects"
+          "description": "CSS transparency and frosted glass effects",
+          "link": "/styles/glass_effect"
+        }
+      ]
+    },
+    {
+      "category": "States",
+      "description": "Manipulate data and states in frontend",
+      "link": "/states",
+      "pages": [
+        {
+          "page": "useReducer",
+          "description": "learning syntax and use cases of useReducer",
+          "link": "/states/usereducer"
         }
       ]
     },
     {
       "category": "More",
       "description": "",
+      "link": "/",
       "pages": [
         {
           "page": "About Me",
-          "description": "My background and interests"
+          "description": "My background and interests",
+          "link": "about_me"
         }
       ]
     }

@@ -29,9 +29,9 @@ export default function Navbar() {
             <NavigationMenuItem key={ category }>
                 <NavigationMenuTrigger>{ category }</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                    <ul className="grid gap-3 p-6">
-                        { pages.map(({ page, description }) => (
-                            <ListItem href='/' key={ page } title={ page }>{ description }</ListItem>
+                    <ul className="grid gap-3 p-6 w-[487px]">
+                        { pages.map(({ page, description, link }) => (
+                            <ListItem href={ link } key={ page } title={ page }>{ description }</ListItem>
                         ))}
                     </ul>
                 </NavigationMenuContent>
@@ -42,7 +42,7 @@ export default function Navbar() {
   return (
     <nav className="p-2 flex flex-row">
         <Sidebar/>
-        <h1 className='py-2 px-3 font-bold'>HUGO DEHSIGN</h1>
+        <h1 className='py-2 px-3 font-bold'><Link href='/'>HUGO DEHSIGN</Link></h1>
       <NavigationMenu className='hidden sm:block'>
         <NavigationMenuList>
             {renderMenu()}

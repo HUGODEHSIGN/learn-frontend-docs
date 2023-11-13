@@ -14,15 +14,20 @@ export default function Categories() {
   
 
     const renderCards: () => any = () => {
-        return categories.map(({ category, description, pages }) => (
-            <CategoryCard key={ category } title={ category } description={ description }>
-                {pages.map(({ page }) => (
-                  <Button key={ page } variant='secondary' asChild>
-                    <Link href='/'>{ page }</Link>
-                  </Button>  
-                ))}
-            </CategoryCard>
-        ))
+        return categories.map(({ category, description, pages, link }) => {
+          if (category != 'More') {
+             return (
+              <CategoryCard key={ category } title={ category } description={ description } link={ link }>
+                  {pages.map(({ page, link }) => (
+                    <Button key={ page } variant='secondary' asChild>
+                      <Link href={ link }>{ page }</Link>
+                    </Button>  
+                  ))}
+              </CategoryCard>
+          )
+          }
+          
+      })
     }
 
     console.log(renderCards())

@@ -32,9 +32,9 @@ export default function Sidebar() {
     <AccordionTrigger>{ category }</AccordionTrigger>
     <AccordionContent className='text-left'>
       <div className="flex flex-col items-start">
-      {pages.map(({ page }) => (
+      {pages.map(({ page, link }) => (
         <Button key={ page } variant="link" asChild>
- <Link href='/'>{ page }</Link>
+ <Link href={ link }>{ page }</Link>
         </Button>
            
       ))}
@@ -50,8 +50,10 @@ export default function Sidebar() {
 
   return (
     <Sheet>
-  <SheetTrigger className='px-2 sm:hidden'>
+  <SheetTrigger className='px-2 sm:hidden' asChild>
+      <Button variant='ghost' size='icon'>
     <Menu/>
+</Button>
   </SheetTrigger>
   <SheetContent side='left'>
     <SheetHeader>

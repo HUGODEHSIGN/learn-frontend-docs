@@ -8,11 +8,11 @@ interface Props {
 }
 
 export default function CategoryPageGrid({ category }: Props) {
-    const layoutPages = pageData.categories[category].pages;
+    const pages = pageData.categories[category].pages;
 
     const renderCards: () => any = () => {
-        return layoutPages.map(({ page, description }) => (
-<PageCard title={ page } description={ description }></PageCard>
+        return pages.map(({ page, description }) => (
+<PageCard title={ page } description={ description } link={`${pageData.categories[category].category.toLowerCase()}/${page.toLowerCase()}`}></PageCard>
         ))
     }
 

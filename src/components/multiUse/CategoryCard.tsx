@@ -1,4 +1,4 @@
-
+'use client'
 
 import React from 'react'
 
@@ -12,14 +12,16 @@ import {
   } from "@/components/ui/card"
   
 import { Button } from '../ui/button'
+import Link from 'next/link'
 
   interface Props {
     children: any,
     title: string,
     description: string,
+    link: string
   }
 
-export default function CategoryCard({ children, title, description }: Props) {
+export default function CategoryCard({ children, title, description, link }: Props) {
   return (
     <Card>
     <CardHeader>
@@ -27,10 +29,14 @@ export default function CategoryCard({ children, title, description }: Props) {
       <CardDescription>{ description }</CardDescription>
     </CardHeader>
     <CardContent>
-      <div className='flex flex-col gap-2 items-start'>{ children }</div>
+      <div className='flex flex-wrap gap-2 items-start'>{ children }</div>
     </CardContent>
     <CardFooter>
-      <Button>View Category</Button>
+      <Button asChild>
+        <Link href={ link }>
+        View Category
+        </Link>
+        </Button>
     </CardFooter>
   </Card>
   )
